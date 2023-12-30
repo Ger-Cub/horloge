@@ -8,6 +8,9 @@
 	 <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
+
+	<h1 id="date">31 <span style="color: #FEC134;">Décembre</span> 2023</h1>
+
 	<div class="clock">
 		<div class="hour">
 			<div class="hr" id="hr"></div>
@@ -18,22 +21,51 @@
 		<div class="sec">
 			<div class="sc" id="sc"></div>
 		</div>
-		
 	</div>
 
 	 <div class="social">
-            <a href="tel:+243991102448" class="footer__icon"><i class='bx bxs-phone-call'></i></a>
-            <a href="sms:+243991102448" class="footer__icon"><i class='bx bx-message-rounded-dots'></i></a>
-            <a href="https://www.facebook.com/gerard.cubaka.7/" class="footer__icon"><i class='bx bxl-facebook' ></i></a>
+            <a href="tel:+243991102448"><i class='bx bxs-phone-call'></i></a>
+            <a href="sms:+243991102448"><i class='bx bx-message-rounded-dots'></i></a>
+            <a href="https://www.facebook.com/gerard.cubaka.7/"><i class='bx bxl-facebook' ></i></a>
             <a href="https://www.instagram.com/gerardcubaka/" class="footer__icon"><i class='bx bxl-instagram' ></i></a>
-            <a href="https://twitter.com/Cub_Ger24" class="footer__icon"><i class='bx bxl-twitter' ></i></a>
-            <a href="https://www.youtube.com/watch?app=desktop&v=fBOkUh7Homc" class="footer__icon"><i class='bx bxl-youtube' ></i></a>
+            <a href="https://twitter.com/Cub_Ger24"><i class='bx bxl-twitter' ></i></a>
+            <a href="https://www.youtube.com/watch?app=desktop&v=fBOkUh7Homc"><i class='bx bxl-youtube' ></i></a>
 
 
-            <a href="https://ger-cub.github.io/portfoliogerard/" class="footer__icon"><i class='bx bx-link-alt'></i></a>
+            <a href="https://gerardcubakabisimw.wixsite.com/lavafri"><i class='bx bx-link-alt'></i></a>
         </div>
 
+        <h1 id="heure"></h1>
+		<button id="bouton">Cacher l'heure numérique</button>
+
 	<script type="text/javascript">
+
+		document.getElementById('date').innerHTML = new Date().toLocaleDateString();
+
+		window.addEventListener('load', heureActuel);
+		function heureActuel(){
+			document.getElementById('heure').innerHTML = new Date().toLocaleTimeString();
+			setTimeout(heureActuel, 1000);
+		}
+		const btn = document.getElementById('bouton');
+		btn.addEventListener('click', cacheHeure);
+		document.getElementById('heure').style.display = 'block'
+
+		function cacheHeure(){
+
+				let h = document.getElementById('heure')
+				if(h.style.display == 'block'){
+					h.style.display = 'none';
+					document.getElementById('bouton').innerHTML = 'Afficher l\'Heure numérique';
+
+				}else{
+					h.style.display = 'block';
+					document.getElementById('bouton').innerHTML = 'Cacher l\'Heure numérique'
+				}
+			}
+
+
+
 		const deg = 6
 		const hr = document.getElementById('hr');
 		const mn = document.getElementById('mn');
