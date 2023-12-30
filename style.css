@@ -18,6 +18,40 @@ button{
 	font-size: 2rem;
 	border-radius: 15px;
 }
+
+
+#date{
+	color: #6dee0a;
+	font-size: 3rem;
+	font-family: sans-serif;
+}
+
+
+#heure{
+			color: #6dee0a;
+			font-size: 30px;
+			font-family: sans-serif;
+		}
+		h2{
+			color: #fff;
+			font-size: 57px;
+		}
+
+		button {
+			width: 200px;
+			height: 30px;
+			color: #0E2431;
+			background-color: #FEC134;
+			border: inherit;
+			border-radius: 50px;
+			font-size: 0.8rem;
+			font-weight: 600;
+		}
+
+
+
+
+
 .clock{
 	width: 350px;
 	height: 350px;
@@ -62,7 +96,6 @@ button{
 .hr, .mn, .sc{
 	display: flex;
 	justify-content: center;
-	/*align-items: center;*/
 	position: absolute;
 	border-radius: 50%;
 }
