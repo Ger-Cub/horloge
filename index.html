@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>HorlogeGerard</title>
+	<link rel="stylesheet" href="style.css">
+	 <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+	<div class="clock">
+		<div class="hour">
+			<div class="hr" id="hr"></div>
+		</div>
+		<div class="min">
+			<div class="mn" id="mn"></div>
+		</div>
+		<div class="sec">
+			<div class="sc" id="sc"></div>
+		</div>
+		
+	</div>
+
+	 <div class="social">
+            <a href="tel:+243991102448" class="footer__icon"><i class='bx bxs-phone-call'></i></a>
+            <a href="sms:+243991102448" class="footer__icon"><i class='bx bx-message-rounded-dots'></i></a>
+            <a href="https://www.facebook.com/gerard.cubaka.7/" class="footer__icon"><i class='bx bxl-facebook' ></i></a>
+            <a href="https://www.instagram.com/gerardcubaka/" class="footer__icon"><i class='bx bxl-instagram' ></i></a>
+            <a href="https://twitter.com/Cub_Ger24" class="footer__icon"><i class='bx bxl-twitter' ></i></a>
+            <a href="https://www.youtube.com/watch?app=desktop&v=fBOkUh7Homc" class="footer__icon"><i class='bx bxl-youtube' ></i></a>
+
+
+            <a href="https://www.youtube.com/watch?app=desktop&v=fBOkUh7Homc" class="footer__icon"><i class='bx bx-link-alt'></i></a>
+        </div>
+
+	<script type="text/javascript">
+		const deg = 6
+		const hr = document.getElementById('hr');
+		const mn = document.getElementById('mn');
+		const sc = document.getElementById('sc');
+
+		setInterval(() => {
+
+			let day = new Date();
+			let hh = day.getHours() * 30;
+			let mm = day.getMinutes() * deg;
+			let ss = day.getSeconds() * deg;
+
+			hr.style.transform = `rotateZ(${(hh)+(mm/12)}deg)`;
+			mn.style.transform = `rotateZ(${mm}deg)`;
+			sc.style.transform = `rotateZ(${ss}deg)`;
+		})
+
+		
+	</script>
+</body>
+</html>
